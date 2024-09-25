@@ -1,5 +1,3 @@
-# 2024-09-23: This currently only covers GMEPElectricalCommands.
-# Expand this file to cover the other command suites when they are ready to be integrated into the UpdateAgent.
 $zDriveSourceDir = "Z:\GMEP Engineers\Users\GMEP Softwares\AutoCAD Commands"
 $localDestDir = "$Env:userprofile\AutoCAD Commands"
 $repos = @(
