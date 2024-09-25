@@ -1,36 +1,26 @@
 $zDriveSourceDir = "Z:\GMEP Engineers\Users\GMEP Softwares\AutoCAD Commands"
 $localDestDir = "$Env:userprofile\AutoCAD Commands"
+$formattedDestDir = $localDestDir -replace "\\", "/"
 $repos = @(
-    [pscustomobject]@{name="GMEPElectricalCommands";dll="ElectricalCommands.dll"},
-    [pscustomobject]@{name="GMEPElectricalResidential";dll="GMEPElectricalResidential.dll"}
+    [pscustomobject]@{name="GMEPElectricalCommands";dll="ElectricalCommands.dll";lsp="GMEPElectricalCommands.lsp"},
+    [pscustomobject]@{name="GMEPElectricalResidential";dll="GMEPElectricalResidential.dll";lsp="GMEPElectricalResidential.lsp"}
 )
 foreach($repo in $repos) {
+    $name = $repo.name
+    $dll = $repo.dll
+    $lsp = $repo.lsp
     try {
-        $name = $repo.name
-        $dll = $repo.dll
         $zDriveDll = Get-Item "$zDriveSourceDir\$name\latest\$dll" -ErrorAction Stop
         $localDll = Get-Item "$localDestDir\$name\$dll" -ErrorAction Stop
         if ($zDriveDll.CreationTime -gt $localDll.CreationTime) {
-            Copy-Item -Path "$zDriveSourceDir\$name\latest\*" -Destination "$localDestDir\$name" -Recurse
+            Copy-Item -Force -Path "$zDriveSourceDir\$name\latest\*" -Destination "$localDestDir\$name" -Recurse
             Get-ChildItem -Recurse "$localDestDir\$name" | Unblock-File
+            Write-Output "(command `"netload`" `"$formattedDestDir/$name/$dll`")" | Out-File -FilePath "$localDestDir\$lsp"
         }
     } catch {
         mkdir -Force -Path "$localDestDir\$name"
-        Copy-Item -Path "$zDriveSourceDir\$name\latest\*" -Destination "$localDestDir\$name" -Recurse
+        Copy-Item -Force -Path "$zDriveSourceDir\$name\latest\*" -Destination "$localDestDir\$name" -Recurse
         Get-ChildItem -Recurse "$localDestDir\$name" | Unblock-File
+        Write-Output "(command `"netload`" `"$formattedDestDir/$name/$dll`")" | Out-File -FilePath "$localDestDir\$lsp"
     }
-}
-
-try {
-    $zDriveLsp = Get-Item "$zDriveSourceDir\load_dll.lsp" -ErrorAction Stop
-    $localLsp = Get-Item "$localDestDir\load_dll.lsp" -ErrorAction Stop
-    if ($zDriveLsp.CreationTime -gt $localLsp.CreationTime) {
-        Copy-Item "$zDriveSourceDir\load_dll.lsp" -Destination "$localDestDir"
-        Get-Item "$localDestDir\load_dll.lsp" | Unblock-File
-        (Get-Content "$localDestDir\load_dll.lsp") -replace "%USERPROFILE%", "$Env:userprofile" -replace "\\", "/" | Out-File "$localDestDir\load_dll.lsp"
-    }
-} catch {
-    Copy-Item "$zDriveSourceDir\load_dll.lsp" -Destination "$localDestDir"
-    Get-Item "$localDestDir\load_dll.lsp" | Unblock-File
-    (Get-Content "$localDestDir\load_dll.lsp") -replace "%USERPROFILE%", "$Env:userprofile" -replace "\\", "/" | Out-File "$localDestDir\load_dll.lsp"
 }

@@ -10,8 +10,8 @@
 1. Type `APPLOAD` and hit Enter.
 1. Under *Startup Suite*, click *Contents*.
 1. Click *Add*.
-1. In the File Name textbox, paste `%USERPROFILE%\AutoCAD Commands\load_dll.lsp`
-1. Click *Open*.
+1. In the top file path textbox, paste `%USERPROFILE%\AutoCAD Commands` and hit Enter.
+1. Select all `.lsp` files and click *Open*.
 1. Click *Close* to close the Startup Suite window.
 1. Click *Close* to close the Load/Unload Applications window.
 1. Close and reopen AutoCAD. Click *Always Load* at the security prompt.
