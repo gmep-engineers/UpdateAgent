@@ -1,7 +1,7 @@
 # UpdateAgent
 ## Setup for new user
 ### Required once for new user
-1. Download and unzip the contents of this repository.
+1. [Download](https://github.com/gmep-engineers/UpdateAgent/archive/refs/heads/main.zip) and unzip the contents of this repository.
 1. Right-click `Installer.ps1` and click *Run with PowerShell*. The PowerShell window will close on its own upon completion.
 
 ## Setting up `APPLOAD` in AutoCAD
