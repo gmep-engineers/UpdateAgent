@@ -20,7 +20,7 @@
 1. Type `APPLOAD` and hit Enter.
 1. Under _Startup Suite_, click _Contents_.
 1. Click _Add_.
-1. In the top file path textbox, paste `%USERPROFILE%\AutoCAD Commands` and hit `Enter ↵`.
+1. In the top file path textbox, paste `%USERPROFILE%\Documents\Scripts` and hit `Enter ↵`.
 1. Select all `AutoLISP Application` files and click _Open_.
 1. Click _Close_ to close the Startup Suite window.
 1. Click _Close_ to close the Load/Unload Applications window.
