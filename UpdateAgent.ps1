@@ -26,6 +26,12 @@ foreach ($repo in $repos) {
     }
 }
 
+
+$nodeGraphSourcePath = "Z:\GMEP Engineers\Users\GMEP Softwares\GMEPNodeGraph.zip"
+Copy-Item -Force -Path "$nodeGraphSourcePath" -Destination "$localDestDir"
+Unblock-File "$localDestDir\GMEPNodeGraph.zip"
+Expand-Archive -Force -Path "$localDestDir\GMEPNodeGraph.zip" -DestinationPath "$localDestDir\GMEPNodeGraph"
+
 $designToolSourcePath = "Z:\GMEP Engineers\Users\GMEP Softwares\GMEPDesignTool.zip"
 Copy-Item -Force -Path "$designToolSourcePath" -Destination "$localDestDir"
 Unblock-File "$localDestDir\GMEPDesignTool.zip"
