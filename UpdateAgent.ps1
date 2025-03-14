@@ -1,5 +1,5 @@
 $zDriveSourceDir = "Z:\GMEP Engineers\Users\GMEP Softwares\AutoCAD Commands"
-$localDestDir = "$Env:userprofile\AutoCAD Commands"
+$localDestDir = "$Env:userprofile\Documents\Scripts"
 $formattedDestDir = $localDestDir -replace "\\", "/"
 $repos = @(
     [pscustomobject]@{name="GMEPElectricalCommands";dll="ElectricalCommands.dll";lsp="GMEPElectricalCommands.lsp"},
