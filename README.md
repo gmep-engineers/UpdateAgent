@@ -25,3 +25,10 @@
 1. Click _Close_ to close the Startup Suite window.
 1. Click _Close_ to close the Load/Unload Applications window.
 1. Close and reopen AutoCAD. Click _Always Load_ at the security prompts.
+
+### To Update
+
+1. Close AutoCAD and all GMEP software tools.
+1. Open a new Windows Explorer window.
+1. In the top file path textbox, paste `%USERPROFILE%\Documents\Scripts` and hit `Enter ↵`.
+1. Right-click `UpdateAgent.ps1` and click _Run with PowerShell_.
