@@ -10,7 +10,7 @@
 1. [Download](https://github.com/gmep-engineers/UpdateAgent/archive/refs/heads/main.zip) the contents of this repository in a zip file.
 1. Right-click the zip file and click _Properties_.
 1. If there is a _Security_ field at the bottom of the Properties dialog, check _Unblock_. Otherwise continue.
-1. Unzip the contents and right-click `Installer.ps1` and click _Run with PowerShell_. The PowerShell window will close on its own upon completion.
+1. Unzip the contents and right-click `Installer.ps1` and click _Run with PowerShell_.
 
 ## Setting up `APPLOAD` in AutoCAD
 
