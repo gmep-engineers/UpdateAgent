@@ -32,7 +32,7 @@
 1. Close AutoCAD.
 1. Open a new Windows Explorer window.
 1. In the top file path textbox, paste `%USERPROFILE%\Documents\Scripts` and hit `Enter ↵`.
-1. Delete the folders `GMEPElectricalCommands`, `GMEPElectricalResidential`, and `GMEPSolar`
+1. Delete the folders `GMEPElectricalCommands`, `GMEPElectricalResidential`, and `GMEPSolar`.
 1. Right-click `Installer.ps1` and click _Run with PowerShell_.
 1. Wait for PowerShell to output `DONE`.
 
