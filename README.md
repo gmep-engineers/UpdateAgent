@@ -11,6 +11,7 @@
 1. Right-click the zip file and click _Properties_.
 1. If there is a _Security_ field at the bottom of the Properties dialog, check _Unblock_. Otherwise continue.
 1. Unzip the contents and right-click `Installer.ps1` and click _Run with PowerShell_.
+1. Wait for PowerShell to output `DONE`.
 
 ## Setting up `APPLOAD` in AutoCAD
 
@@ -28,7 +29,37 @@
 
 ### To Update
 
-1. Close AutoCAD and all GMEP software tools.
+1. Close AutoCAD.
 1. Open a new Windows Explorer window.
 1. In the top file path textbox, paste `%USERPROFILE%\Documents\Scripts` and hit `Enter ↵`.
-1. Right-click `UpdateAgent.ps1` and click _Run with PowerShell_.
+1. Delete the folders `GMEPElectricalCommands`, `GMEPElectricalResidential`, and `GMEPSolar`
+1. Right-click `Installer.ps1` and click _Run with PowerShell_.
+1. Wait for PowerShell to output `DONE`.
+
+## Extra setup required for new AutoCAD installation
+
+### Fontmap
+
+1. Open AutoCAD.
+1. Click the AutoCAD symbol at the very top-left.
+1. Click _Options_.
+1. Click the _Files_ tab.
+1. Expand `Text Editor, Dictionary, and Font File Names`.
+1. Expand `Font Mapping File`.
+1. Select the current value string.
+1. Click _Browse_.
+1. Go to `Z:\GMEP Engineers\Electrical Commercial Template\Template CAD`.
+1. Double-click `fontmap.fmp`.
+1. Click _OK_.
+
+### Profile
+
+1. Open AutoCAD.
+1. Click the AutoCAD symbol at the very top-left.
+1. Click _Options_.
+1. Click the _Profiles_ tab.
+1. Click _Import_.
+1. Go to `Z:\GMEP Engineers\Projects\2016jobs\AutoCAD Support\Profiles`.
+1. Double-click `David  Profile 02-14-19.arg`.
+1. Click _Set Current_.
+1. Click _OK_.
