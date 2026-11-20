@@ -4,7 +4,8 @@ $formattedDestDir = $localDestDir -replace "\\", "/"
 $repos = @(
     [pscustomobject]@{name = "GMEPElectricalCommands"; dll = "ElectricalCommands.dll"; lsp = "GMEPElectricalCommands.lsp" },
     [pscustomobject]@{name = "GMEPElectricalResidential"; dll = "GMEPElectricalResidential.dll"; lsp = "GMEPElectricalResidential.lsp" },
-    [pscustomobject]@{name = "GMEPSolar"; dll = "GMEPSolar.dll"; lsp = "GMEPSolar.lsp" }
+    [pscustomobject]@{name = "GMEPSolar"; dll = "GMEPSolar.dll"; lsp = "GMEPSolar.lsp" },
+    [pscustomobject]@{name = "GMEPPlumbing"; dll = "GMEPPlumbing.dll"; lsp = "GMEPPlumbing.lsp" }
 )
 foreach ($repo in $repos) {
     $name = $repo.name
